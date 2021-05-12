@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Cinema | Russia</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<header class="header">
+	<div class="container">
+		<div class="header__body">
+			<a href="/" class="header__logo">
+				<h1 class="header__text">
+					Cinema <span>Russia</span>
+
+				</h1>
+			</a>
+		</div>
+	</div>
+</header>	<main class="main">
+		<section class="profile">
+			<div class="container">
+				<div class="profile__body">
+					<div class="profile__photo">
+						<img src="img/profile/photo.jpg" alt="">
+					</div>
+					<div class="profile__info">
+						<div class="profile__about">
+							<h2 class="profile__name">
+								Мартин Скорсезе
+							</h2>
+							<h3 class="profile__profession">
+								Режиссер
+							</h3>
+						</div>
+						<button class="profile__edit popup-link" data-id='edit'>
+							<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+								<path d="M10 1.32827L2.60377 8.7666L1.28302 7.41936L8.66038 0L10 1.32827ZM0 10L1.96226 9.41177L0.584906 8.08349L0 10Z"/>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<button class="profile__add popup-link" data-id='add'></button>
+			</div>
+		</section>
+		<section class="films">
+			<div class="container">
+				<ul class="films__list">
+					<li class="films__item item">
+						<div class="item__card">
+							<div class="item__img">
+								<img src="img/films/1.jpg" alt="">
+							</div>
+							<div class="item__info">
+								<h4 class="item__title">
+									Волк с Уолл-стрит
+								</h4>
+								<a href="/" class="item__like" onclick="like()"></a>
+							</div>
+						</div>
+					</li>
+					<li class="films__item item">
+						<div class="item__card">
+							<div class="item__img">
+								<img src="img/films/2.jpg" alt="">
+							</div>
+							<div class="item__info">
+								<h4 class="item__title">
+									Таксист
+								</h4>
+								<a href="/" class="item__like" onclick="like()"></a>
+							</div>
+						</div>
+					</li>
+					<li class="films__item item">
+						<div class="item__card">
+							<div class="item__img">
+								<img src="img/films/3.jpg" alt="">
+							</div>
+							<div class="item__info">
+								<h4 class="item__title">
+									Казино
+								</h4>
+								<a href="/" class="item__like" onclick="like()"></a>
+							</div>
+						</div>
+					</li>
+					<li class="films__item item">
+						<div class="item__card">
+							<div class="item__img">
+								<img src="img/films/4.jpg" alt="">
+							</div>
+							<div class="item__info">
+								<h4 class="item__title">
+									Ирландец
+								</h4>
+								<a href="/" class="item__like" onclick="like()"></a>
+							</div>
+						</div>
+					</li>
+					<li class="films__item item">
+						<div class="item__card">
+							<div class="item__img">
+								<img src="img/films/5.jpg" alt="">
+							</div>
+							<div class="item__info">
+								<h4 class="item__title">
+									Остров проклятых
+								</h4>
+								<a href="/" class="item__like" onclick="like()"></a>
+							</div>
+						</div>
+					</li>
+					<li class="films__item item">
+						<div class="item__card">
+							<div class="item__img">
+								<img src="img/films/6.jpg" alt="">
+							</div>
+							<div class="item__info">
+								<h4 class="item__title">
+									Отступники
+								</h4>
+								<a href="/" class="item__like" onclick="like()"></a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</main>
+<footer class="footer">
+	<div class="container">
+		<p class="footer__copy">
+			© 2020 Cinema Russia
+		</p>
+	</div>
+</footer>	<div class="popup" id='edit' >
+		<div class="popup__content">
+			<div class="popup__body">
+				<h3 class="popup__title">
+					Редактировать профиль
+				</h3>
+				<form action="" class="popup__form">
+					<input type="text" class="popup__input-text" id='name' placeholder="Ваше имя">
+					<input type="text" class="popup__input-text" id='profession' placeholder="Ваша профессия">
+					<button class="popup__save">Сохранить</button>
+				</form>
+				<a href="/" class="popup__close popup-close">
+					<svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M44.7661 41.5683L31.9759 28.778L44.7661 15.9878L41.5686 12.7902L28.7783 25.5805L15.9881 12.7902L12.7905 15.9878L25.5808 28.778L12.7905 41.5683L15.9881 44.7658L28.7783 31.9756L41.5686 44.7658L44.7661 41.5683Z" />
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="popup" id='add'>
+		<div class="popup__content">
+			<div class="popup__body">
+				<h3 class="popup__title">
+					Добавить фильм
+				</h3>
+				<form action="" class="popup__form">
+					<input type="text" class="popup__input-text" id='title' placeholder="Название фильма">
+					<input type="file" class="popup__input-file" onchange="load(this)">
+					<button class="popup__save">Сохранить</button>
+				</form>
+				<a href="/" class="popup__close popup-close">
+					<svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M44.7661 41.5683L31.9759 28.778L44.7661 15.9878L41.5686 12.7902L28.7783 25.5805L15.9881 12.7902L12.7905 15.9878L25.5808 28.778L12.7905 41.5683L15.9881 44.7658L28.7783 31.9756L41.5686 44.7658L44.7661 41.5683Z" />
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+</html>
